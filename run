@@ -1,0 +1,9 @@
+#!/bin/bash
+mkdir -p ./output/
+python3 miniPython.py ./examples/simplest.py
+python3 miniPython.py ./examples/function.py
+python3 miniPython.py ./examples/primitives.py
+python3 miniPython.py ./examples/if.py
+python3 miniPython.py ./examples/while.py
+python3 miniPython.py ./examples/list.py
+python3 miniPython.py ./examples/tuple.py
