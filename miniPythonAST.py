@@ -2,7 +2,6 @@
 
 import sys
 
-''' Starting point for our AST: miniJavaAST.py from tutorial'''
 class Node(object):
     """
     Abstract base class for AST nodes
