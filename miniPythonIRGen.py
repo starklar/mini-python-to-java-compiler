@@ -6,31 +6,15 @@ import re
 from threeAddressCode import TAC
 
 class IRGen(object):
-
-    '''
-    NOTES
-    
-    Peephole Optimization:
-    * Remove lines that are just expressions
-    * Remove variable assignments for unused variables
-    * Do calculations that only involve literals
-
-    Potential other stuff:
-    * Print statement
-    * More extensive examples (test typechecker, etc.)
-    '''
-
     def __init__(self):
         self.TAC_lst = []
         self.register_count = 0
         self.label_count = 0
         self.else_labels_stack = []
 
-    ''' Generate method from tinyJavaIRGen.py from practical '''
     def generate(self, node):
         method = 'gen_' + node.__class__.__name__
         return getattr(self, method)(node)
-    ''' End Citation '''
 
     # HELPERS
 

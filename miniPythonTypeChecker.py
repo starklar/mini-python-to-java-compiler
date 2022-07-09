@@ -4,8 +4,6 @@ from miniPythonSymbolTable import SymbolTable, ParseError
 import miniPythonAST as ast
 
 class TypeChecker(object):
-
-    ''' Helper functions from miniJavaTypeChecker.py in practical '''
     def typecheck(self, node, st):
         method = 'check_' + node.__class__.__name__
         return getattr(self, method, self.generic_typecheck)(node, st)
@@ -16,9 +14,7 @@ class TypeChecker(object):
             return ''
         else:
             return ''.join(self.typecheck(c, st) for c_name, c in node.children())
-    ''' End Citation '''
 
-    ''' Code for starting off the checking process from the root node: from tinyJavaTypeChecker.py from practical '''
     def check_Program(self, node, st):
         """
         Generate global symbol table. Recursively typecheck its classes and
@@ -31,8 +27,7 @@ class TypeChecker(object):
             self.typecheck(codeline, global_st)
 
         return global_st
-    ''' End citation '''
-        
+
     def check_FunctionDef(self, node, st):
         st.push_scope()
 

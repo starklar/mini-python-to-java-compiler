@@ -444,7 +444,6 @@ class MiniPythonParser:
             print(*args)
 
 if __name__ == "__main__":
-    ''' Code to run parser: miniJavaParser.py from tutorial'''
     argparser = argparse.ArgumentParser(description='Take in the miniPython source code and parses it')
     argparser.add_argument('FILE', help='Input file with miniPython source code')
     args = argparser.parse_args()
@@ -452,7 +451,6 @@ if __name__ == "__main__":
     f = open(args.FILE, 'r')
     data = f.read()
     f.close()
-    ''' End citation '''
 
     m = MiniPythonParser()
     m.build()

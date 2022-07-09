@@ -9,8 +9,6 @@ from miniPythonTargetGen import TargetGen
 
 import miniPythonAST as ast
 
-''' Runner program, from tinyJava.py from practical '''
-
 if __name__ == "__main__":
 
     # Python module "argparse" allows you to easily add commandline flags
@@ -61,4 +59,3 @@ if __name__ == "__main__":
     
     target_generator = TargetGen(ir_generator)
     target_generator.generate_target(str(args.FILE))
-''' End Citation '''

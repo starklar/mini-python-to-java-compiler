@@ -6,11 +6,6 @@ import sys
 class Node(object):
     """
     Abstract base class for AST nodes
-    Things to implement:
-        __init__: Initialize attributes / children
-        children: Method to return list of children. Alternatively, you can
-                  look into __iter__ method, which allow nodes to be
-                  iterable.
     """
     def children(self):
         """
@@ -22,29 +17,11 @@ class Node(object):
     attr_names = ()
 
 class NodeVisitor(object):
-    """
-    A base NodeVisitor class for visiting MiniJava nodes.
-    Define your own visit_X methods to, where X is the class
-    name you want to visit with these methods.
-    Refer to visit_Program, for example
-    """
-
     def visit(self, node, offset=0):
-        """
-        Your compiler can call this method to traverse through your AST
-        """
         method = 'visit_' + node.__class__.__name__
         return getattr(self, method, self.generic_visit)(node, offset)
 
     def generic_visit(self, node, offset=0):
-        """
-        Default visit method that simply prints out given node's attributes,
-        then traverses through its children. This is called if no explicit
-        visitor function exists for a node.
-
-        NOTE: A method within Node object with similar behaviour might be
-              useful when debugging your project
-        """
         lead = ' ' * offset
 
         output = lead + node.__class__.__name__ + ': '

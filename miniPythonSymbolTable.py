@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-''' Symbol table class from miniJavaSymbolTable.py from practical'''
-
 class ParseError(Exception): pass
 
 class SymbolTable(object):
@@ -46,5 +44,3 @@ class SymbolTable(object):
             if name in scope:
                 return True
         return False
-
-''' End Citation '''

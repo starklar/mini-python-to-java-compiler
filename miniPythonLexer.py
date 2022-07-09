@@ -142,7 +142,6 @@ class MiniPythonLexer():
     ''' End citation '''
 
 if __name__ == "__main__":
-    ''' Code to run lexer: miniJavaLexer_solution.py from tutorial '''
     parser = argparse.ArgumentParser(description='Take in the miniPython source code and perform lexical analysis.')
     parser.add_argument('FILE', help="Input file with miniPython source code")
     args = parser.parse_args()
@@ -154,4 +153,3 @@ if __name__ == "__main__":
     m = miniPythonLexer()
     m.build()
     m.test(data)
-    ''' End citation '''
